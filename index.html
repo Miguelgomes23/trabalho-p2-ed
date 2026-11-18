@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de Min-Heap e Max-Heap</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><h1 id="tit">Heap passo a passo</h1>
+<p id="regra"></p></header>
+<main>
+<section class="controls">
+  <div class="row" role="group" aria-label="Modo do heap">
+    <button id="mmin" class="modo on" aria-pressed="true">Min-Heap</button>
+    <button id="mmax" class="modo" aria-pressed="false">Max-Heap</button>
+  </div>
+  <div class="row">
+    <input id="val" type="text" placeholder="Valores, ex: 4, 7, 1" aria-label="Valores para inserir">
+    <button id="ins">Inserir</button>
+    <button id="ext">Extrair raiz</button>
+    <button id="peek">Ver raiz (peek)</button>
+  </div>
+  <div class="row">
+    <button id="play" class="primary">Executar</button>
+    <button id="step">Próximo passo</button>
+    <button id="reset">Reiniciar</button>
+    <span class="sep"></span>
+    <button id="avg">Caso médio</button>
+    <button id="worst">Pior caso</button>
+    <button id="best">Melhor caso</button>
+  </div>
+</section>
+<section class="view">
+  <div><h2>Árvore binária completa</h2><svg id="tree" viewBox="0 0 720 300" role="img" aria-label="Árvore do heap"></svg></div>
+  <div><h2>Array subjacente</h2><div id="arr"></div>
+  <p class="hint">pai = (i-1)//2 &nbsp; esquerdo = 2i+1 &nbsp; direito = 2i+2</p></div>
+</section>
+<section class="panel">
+  <div class="metrics">
+    <div><b id="mc">0</b>comparações</div>
+    <div><b id="ms">0</b>trocas</div>
+    <div><b id="mn">0</b>elementos</div>
+    <div><b id="mp">0/0</b>passo</div>
+  </div>
+  <ol id="log" aria-live="polite"></ol>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
